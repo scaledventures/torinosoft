@@ -288,10 +288,10 @@ export default function AlprBlogPage() {
               incidents early, improve accuracy, reduce operational burden, and enable faster,
               evidence-based decision making. To know more about our platform, reach out to us at{" "}
               <a
-                href="mailto:info@iolaire.ai"
+                href="mailto:info@scaledventures.com"
                 className="text-primary hover:underline break-all"
               >
-                info@iolaire.ai
+                info@scaledventures.com
               </a>
               .
             </p>

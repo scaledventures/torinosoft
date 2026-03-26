@@ -8,6 +8,9 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import ALPRPage from "@/pages/ALPRPage";
 import AdTechPage from "@/pages/AdTechPage";
+import ContactCenterPage from "@/pages/ContactCenterPage";
+import DataCompressionPage from "@/pages/DataCompressionPage";
+import ProductDevelopmentPage from "@/pages/ProductDevelopmentPage";
 import AboutUsPage from "@/pages/AboutUsPage";
 import GetInTouchPage from "@/pages/GetInTouchPage";
 import CareersPage from "@/pages/CareersPage";
@@ -20,6 +23,9 @@ import PrivacySettingsPage from "@/pages/PrivacySettingsPage";
 import ALPRResourcesPage from "@/pages/ALPRResourcesPage";
 import AdTechResourcesPage from "@/pages/AdTechResourcesPage";
 import IndustrySolutionsPage from "@/pages/IndustrySolutionsPage";
+import ConstructionPage from "@/pages/ConstructionPage";
+import DataManagementPage from "@/pages/DataManagementPage";
+import SoftwareDevelopmentPage from "@/pages/SoftwareDevelopmentPage";
 import RetailPage from "@/pages/RetailPage";
 import SafetyEnforcementPage from "@/pages/SafetyEnforcementPage";
 import CalendarPage from "@/pages/CalendarPage";
@@ -84,13 +90,19 @@ function Router() {
       <Route path="/site-login" component={SiteLoginPage} />
       {/* Products */}
       <Route path="/alpr" component={ALPRPage} />
-      <Route path="/adtech" component={AdTechPage} />
+      <Route path="/adtech" component={ContactCenterPage} />
+      <Route path="/contact-center" component={ContactCenterPage} />
+      <Route path="/data-compression" component={DataCompressionPage} />
+      <Route path="/product-development" component={ProductDevelopmentPage} />
       <Route path="/adtech/loyalty-offers" component={LoyaltyOffersPage} />
       <Route path="/alpr/unified-dashboard" component={UnifiedDashboardPage} />
       <Route path="/alpr/layered-security-privacy" component={LayeredSecurityPrivacyPage} />
       <Route path="/alpr/edge-applications" component={EdgeApplicationsALPRPage} />
       {/* Industry Solutions */}
       <Route path="/industry-solutions" component={IndustrySolutionsPage} />
+      <Route path="/construction" component={ConstructionPage} />
+      <Route path="/data-management" component={DataManagementPage} />
+      <Route path="/software-development" component={SoftwareDevelopmentPage} />
       <Route path="/retail" component={RetailPage} />
       <Route path="/safety-enforcement" component={SafetyEnforcementPage} />
       {/* Platform Architecture */}

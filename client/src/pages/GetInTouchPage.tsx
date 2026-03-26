@@ -36,12 +36,11 @@ export default function GetInTouchPage() {
                   San Jose, CA (HQ)
                 </p>
                 <p className="text-sm md:text-base text-muted-foreground">
-                  Ph: xxxxx /{" "}
                   <a
-                    href="mailto:info@iolaire.ai"
+                    href="mailto:info@scaledventures.com"
                     className="text-primary hover:underline break-all"
                   >
-                    info@iolaire.ai
+                    info@scaledventures.com
                   </a>
                 </p>
               </div>
@@ -57,12 +56,11 @@ export default function GetInTouchPage() {
                   Dallas, TX
                 </p>
                 <p className="text-sm md:text-base text-muted-foreground">
-                  Ph: xxxxx /{" "}
                   <a
-                    href="mailto:info@iolaire.ai"
+                    href="mailto:info@scaledventures.com"
                     className="text-primary hover:underline break-all"
                   >
-                    info@iolaire.ai
+                    info@scaledventures.com
                   </a>
                 </p>
               </div>
@@ -78,12 +76,11 @@ export default function GetInTouchPage() {
               Press contact is for media enquiries only.
             </p>
             <p className="text-sm md:text-base text-muted-foreground">
-              Ph: xxxxx /{" "}
               <a
-                href="mailto:info@iolaire.ai"
+                href="mailto:info@scaledventures.com"
                 className="text-primary hover:underline break-all"
               >
-                info@iolaire.ai
+                info@scaledventures.com
               </a>
             </p>
           </section>

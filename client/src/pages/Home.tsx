@@ -294,7 +294,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6 leading-tight">
               One Partner
             </h2>
-            <div className="text-lg md:text-xl text-muted-foreground space-y-3 mb-8">
+            <div className="text-lg md:text-xl text-primary font-bold space-y-3 mb-8">
               <p>Powering the world's leading customer experiences</p>
               <p>Transforming data storage through compression and privacy</p>
               <p>Leveraging Knowledge and Workflow AI to accelerate revenue cycles</p>
@@ -302,7 +302,7 @@ export default function Home() {
             </div>
             <Link href="/get-in-touch">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-8">
-                Speak to an expert <ArrowRight className="ml-2 h-4 w-4" />
+                Talk to an expert <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>

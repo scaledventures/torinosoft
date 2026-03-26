@@ -26,18 +26,18 @@ export function Navbar() {
     {
       name: "SERVICES",
       options: [
-        { label: "Contact Center", path: "/adtech" },
-        { label: "Data Compression", path: "/alpr" },
+        { label: "Contact Center", path: "/contact-center" },
+        { label: "Data Compression", path: "/data-compression" },
         { label: "Knowledge & Workflow AI", path: "/platform-architecture" },
-        { label: "Product Development", path: "/industry-solutions" },
+        { label: "Product Development", path: "/product-development" },
       ],
     },
     { 
       name: "INDUSTRY SOLUTIONS", 
       options: [
-        { label: "Construction", path: "/retail" },
-        { label: "Data Management", path: "/safety-enforcement" },
-        { label: "Software Development", path: "/industry-solutions" }
+        { label: "Construction", path: "/construction" },
+        { label: "Data Management", path: "/data-management" },
+        { label: "Software Development", path: "/software-development" }
       ]
     },
     { 
@@ -80,7 +80,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           <div className="flex items-center gap-2 mr-2">
             {navItems.map((item) => (
               <HoverCard key={item.name} openDelay={0} closeDelay={100}>
@@ -120,24 +120,27 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile/Tablet Toggle */}
         <button
-          className="lg:hidden text-foreground"
+          className="xl:hidden text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile/Tablet Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 max-h-[calc(100vh-4rem)] overflow-y-auto">
           {navItems.map((item) => (
             <div key={item.name} className="flex flex-col gap-1.5">
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-[0.18em] px-2">{item.name}</span>
               {item.options.map((opt) => (
                 <Link key={opt.path} href={opt.path}>
-                  <a className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200">
+                  <a
+                    className="text-base text-foreground/90 hover:text-primary hover:bg-muted/50 px-3 py-1.5 rounded-lg transition-all duration-200"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
                     {opt.label}
                   </a>
                 </Link>
@@ -146,7 +149,10 @@ export function Navbar() {
           ))}
           <div className="flex flex-col gap-2 pt-2">
             <Link href="/get-in-touch">
-              <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-10 text-base">
+              <Button
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-10 text-base"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Contact Us
               </Button>
             </Link>
