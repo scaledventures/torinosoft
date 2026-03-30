@@ -37,7 +37,7 @@ export default function SiteLoginPage() {
               <div className="flex justify-center mb-4">
                 <img
                   src={logoNew}
-                  alt="Torinsoft"
+                  alt="torinosoft"
                   className="h-10 w-auto"
                 />
               </div>

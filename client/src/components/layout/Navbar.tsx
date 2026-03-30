@@ -28,7 +28,7 @@ export function Navbar() {
       options: [
         { label: "Contact Center", path: "/contact-center" },
         { label: "Data Compression", path: "/data-compression" },
-        { label: "Knowledge & Workflow AI", path: "/platform-architecture" },
+        { label: "Knowledge & Workflow AI", path: "/knowledge-workflow-ai" },
         { label: "Product Development", path: "/product-development" },
       ],
     },
@@ -73,7 +73,7 @@ export function Navbar() {
           <a className="flex items-center gap-2 group">
             <img
               src={logoNew}
-              alt="Torinsoft"
+              alt="torinosoft"
               className="h-10 w-auto object-contain"
             />
           </a>

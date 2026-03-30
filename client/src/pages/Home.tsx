@@ -31,6 +31,7 @@ function ServiceSuiteSection({
   reverse = false,
   visualImageSrc,
   visualImageAlt,
+  learnMoreHref = "/get-in-touch",
 }: {
   title: string;
   subtitle: string;
@@ -39,15 +40,18 @@ function ServiceSuiteSection({
   reverse?: boolean;
   visualImageSrc?: string;
   visualImageAlt?: string;
+  learnMoreHref?: string;
 }) {
   function TextSide({
     title,
     subtitle,
     description,
+    learnMoreHref: href,
   }: {
     title: string;
     subtitle: string;
     description: string;
+    learnMoreHref: string;
   }) {
     return (
       <div className="flex h-full flex-col py-4 md:py-6">
@@ -59,7 +63,7 @@ function ServiceSuiteSection({
           <p className="text-xl md:text-2xl font-medium text-foreground mb-6">{subtitle}</p>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">{description}</p>
         </div>
-        <Link href="/get-in-touch">
+        <Link href={href}>
           <a className="link-underline inline-flex items-center gap-1 text-primary font-semibold mt-6">
             Learn More <span className="ml-1">-&gt;</span>
           </a>
@@ -111,11 +115,11 @@ function ServiceSuiteSection({
           {reverse ? (
             <>
               <VisualSide title={title} panelTone={panelTone} visualImageSrc={visualImageSrc} visualImageAlt={visualImageAlt} />
-              <TextSide title={title} subtitle={subtitle} description={description} />
+              <TextSide title={title} subtitle={subtitle} description={description} learnMoreHref={learnMoreHref} />
             </>
           ) : (
             <>
-              <TextSide title={title} subtitle={subtitle} description={description} />
+              <TextSide title={title} subtitle={subtitle} description={description} learnMoreHref={learnMoreHref} />
               <VisualSide title={title} panelTone={panelTone} visualImageSrc={visualImageSrc} visualImageAlt={visualImageAlt} />
             </>
           )}
@@ -219,7 +223,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-12 items-center relative z-0 flex-1">
           <div className="z-10">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.1] mb-6 tracking-tight">
-              <span className="text-gradient">Torinsoft</span>
+              <span className="text-gradient">torinosoft</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl leading-relaxed">
               We pair AI, Machine Learning, Product Development and System Integration to deliver intelligent
@@ -278,6 +282,7 @@ export default function Home() {
         subtitle="Automating construction RFP responses with AI"
         description="We unlock the ability to deliver accelerated RFP responses by automating the commercial construction bid review process. We bring Knowledge and Workflow AI together to format and deliver a final bid proposal that positions your Construction business for growth and success."
         panelTone={2}
+        learnMoreHref="/knowledge-workflow-ai"
       />
 
       <ServiceSuiteSection
@@ -333,7 +338,7 @@ export default function Home() {
                 </a>
               </Link>
 
-              <Link href="/get-in-touch">
+              <Link href="/knowledge-workflow-ai">
                 <a
                   className="group block rounded-2xl p-6 min-h-[160px] lg:h-[160px] text-white no-underline transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
                   style={{ backgroundColor: SERVICE_CARD_COLORS[2] }}

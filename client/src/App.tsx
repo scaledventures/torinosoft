@@ -30,6 +30,7 @@ import RetailPage from "@/pages/RetailPage";
 import SafetyEnforcementPage from "@/pages/SafetyEnforcementPage";
 import CalendarPage from "@/pages/CalendarPage";
 import PlatformArchitecturePage from "@/pages/PlatformArchitecturePage";
+import KnowledgeWorkflowAIPage from "@/pages/KnowledgeWorkflowAIPage";
 import { CookieConsent } from "@/components/CookieConsent";
 import LoyaltyOffersPage from "@/pages/LoyaltyOffersPage";
 import UnifiedDashboardPage from "@/pages/UnifiedDashboardPage";
@@ -107,6 +108,7 @@ function Router() {
       <Route path="/safety-enforcement" component={SafetyEnforcementPage} />
       {/* Platform Architecture */}
       <Route path="/platform-architecture" component={PlatformArchitecturePage} />
+      <Route path="/knowledge-workflow-ai" component={KnowledgeWorkflowAIPage} />
       {/* Resources */}
       <Route path="/alpr-resources" component={ALPRResourcesPage} />
       <Route path="/adtech-resources" component={AdTechResourcesPage} />
