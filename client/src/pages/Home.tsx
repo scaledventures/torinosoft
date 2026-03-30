@@ -302,9 +302,9 @@ export default function Home() {
               <p>Leveraging Knowledge and Workflow AI to accelerate revenue cycles</p>
               <p>&amp; Unlocking growth through custom product and technology advisory services</p>
             </div>
-            <Link href="/get-in-touch">
+            <Link href="/platform-architecture">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-8">
-                Talk to an expert <ArrowRight className="ml-2 h-4 w-4" />
+                Explore Service Architecture <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>
