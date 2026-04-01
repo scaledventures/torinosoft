@@ -19,7 +19,7 @@ export default function SafetyEnforcementPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       <Navbar />
 
-      <main className="container mx-auto px-4 md:px-6 py-24">
+      <main className="container mx-auto px-4 md:px-6 pt-44 pb-24">
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           {/* Intro + banner */}
           <section>

@@ -104,14 +104,14 @@ export function CookieConsent() {
               <div>
                 <p className="font-semibold text-foreground text-sm">You are in control of your data.</p>
                 <p className="text-xs mt-1">
-                  You can control how torinosoft websites use cookies and similar technologies by
+                  You can control how Torinosoft websites use cookies and similar technologies by
                   making choices below. But note that if you disable cookies and similar
-                  technologies entirely, torinosoft websites may not function properly.
+                  technologies entirely, Torinosoft websites may not function properly.
                 </p>
               </div>
               <div>
                 <p className="font-semibold text-foreground text-sm">
-                  What are cookies and why does torinosoft use them?
+                  What are cookies and why does Torinosoft use them?
                 </p>
                 <p className="text-xs mt-1">
                   Cookies are small text files stored by your web browser when you use websites.
@@ -126,7 +126,7 @@ export function CookieConsent() {
                 <p className="font-semibold text-foreground text-sm">How do I make choices?</p>
                 <p className="text-xs mt-1">
                   You can make choices in the menu below about what cookies and other technologies
-                  you want us to use on torinosoft sites when you visit them from this browser. You
+                  you want us to use on Torinosoft sites when you visit them from this browser. You
                   can always change those choices later by clicking on the Manage Cookies link at
                   the bottom of the page.
                 </p>
@@ -185,7 +185,7 @@ export function CookieConsent() {
                     Extend functionality
                   </label>
                   <p className="text-xs text-muted-foreground mt-1">
-                    These cookies are used to enhance the functionality of torinosoft sites such as
+                    These cookies are used to enhance the functionality of Torinosoft sites such as
                     remembering your settings and preferences to deliver a personalized
                     experience.
                   </p>
@@ -275,14 +275,14 @@ export function CookieConsent() {
               <div>
                 <p className="font-semibold text-foreground text-sm">You are in control of your data.</p>
                 <p className="text-xs mt-1">
-                  You can control how torinosoft websites use cookies and similar technologies by
+                  You can control how Torinosoft websites use cookies and similar technologies by
                   making choices below. But note that if you disable cookies and similar
-                  technologies entirely, torinosoft websites may not function properly.
+                  technologies entirely, Torinosoft websites may not function properly.
                 </p>
               </div>
               <div>
                 <p className="font-semibold text-foreground text-sm">
-                  What are cookies and why does torinosoft use them?
+                  What are cookies and why does Torinosoft use them?
                 </p>
                 <p className="text-xs mt-1">
                   Cookies are small text files stored by your web browser when you use websites.
@@ -297,7 +297,7 @@ export function CookieConsent() {
                 <p className="font-semibold text-foreground text-sm">How do I make choices?</p>
                 <p className="text-xs mt-1">
                   You can make choices in the menu below about what cookies and other technologies
-                  you want us to use on torinosoft sites when you visit them from this browser. You
+                  you want us to use on Torinosoft sites when you visit them from this browser. You
                   can always change those choices later by clicking on the Manage Cookies link at
                   the bottom of the page.
                 </p>
@@ -356,7 +356,7 @@ export function CookieConsent() {
                     Extend functionality
                   </label>
                   <p className="text-xs text-muted-foreground mt-1">
-                    These cookies are used to enhance the functionality of torinosoft sites such as
+                    These cookies are used to enhance the functionality of Torinosoft sites such as
                     remembering your settings and preferences to deliver a personalized
                     experience.
                   </p>

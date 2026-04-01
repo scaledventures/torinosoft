@@ -8,7 +8,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import logoNew from "@assets/LogoNew.png";
+import logoNew from "@assets/TorinoSoftLogo.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,7 +73,7 @@ export function Navbar() {
           <a className="flex items-center gap-2 group">
             <img
               src={logoNew}
-              alt="torinosoft"
+              alt="Torinosoft"
               className="h-10 w-auto object-contain"
             />
           </a>

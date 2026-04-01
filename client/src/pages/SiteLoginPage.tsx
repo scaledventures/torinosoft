@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import logoNew from "@assets/iolaire-logo.png";
+import logoNew from "@assets/TorinoSoftLogo.png";
 
 const STATIC_ID = "torinosoft.ai";
 const STATIC_PASSWORD = "scaledventures";
@@ -37,7 +37,7 @@ export default function SiteLoginPage() {
               <div className="flex justify-center mb-4">
                 <img
                   src={logoNew}
-                  alt="torinosoft"
+                  alt="Torinosoft"
                   className="h-10 w-auto"
                 />
               </div>

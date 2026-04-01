@@ -6,7 +6,7 @@ export default function LayeredSecurityPrivacyPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       <Navbar />
 
-      <main className="container mx-auto px-4 md:px-6 py-24">
+      <main className="container mx-auto px-4 md:px-6 pt-44 pb-24">
         <div className="max-w-4xl mx-auto space-y-10">
           <header>
             <div className="relative overflow-hidden rounded-[32px] border border-border/80 bg-gradient-to-r from-primary/5 via-background to-primary/5 px-8 pt-12 pb-8 md:px-12 md:py-10 shadow-sm">

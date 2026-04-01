@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import clientLoginBg from "@assets/Client-Login-bg.jpeg";
-import logoNew from "@assets/iolaire-logo.png";
+import logoNew from "@assets/TorinoSoftLogo.png";
 
 export default function ClientLoginPage() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -75,7 +75,7 @@ export default function ClientLoginPage() {
           >
             <div className="rounded-3xl bg-card/95 shadow-2xl border border-border/70 px-6 py-8 md:px-8 md:py-9">
               <div className="flex justify-center mb-4">
-                <img src={logoNew} alt="torinosoft" className="h-10 w-auto" />
+                <img src={logoNew} alt="Torinosoft" className="h-10 w-auto" />
               </div>
               <h1 className="text-2xl md:text-3xl font-heading font-bold text-center mb-6">
                 Login

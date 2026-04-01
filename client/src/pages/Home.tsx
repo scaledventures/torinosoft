@@ -12,6 +12,7 @@ import contactCenterPlatformImg from "../../../attached_assets/contact-center-pl
 import dataCompressionPlatformImg from "../../../attached_assets/data-compression-platform.png";
 import knowledgeWorkflowImg from "../../../attached_assets/knowledge-&-workflow.png";
 import productDevelopmentPlatformImg from "../../../attached_assets/product-development-platform.png";
+import torinosoftHeroImg from "../../../attached_assets/TorinosoftLandingPageImage.png";
 
 const SERVICE_CARD_COLORS = ["#6a2de2", "#39827a", "#1f6fff", "#78afdb", "#feac00"];
 
@@ -223,7 +224,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-12 items-center relative z-0 flex-1">
           <div className="z-10">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.1] mb-6 tracking-tight">
-              <span className="text-gradient">torinosoft</span>
+              <span className="text-gradient">Torinosoft</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl leading-relaxed">
               We pair AI, Machine Learning, Product Development and System Integration to deliver intelligent
@@ -242,17 +243,12 @@ export default function Home() {
             </Link>
           </div>
           <div className="relative w-full lg:max-w-none mx-auto aspect-[7.9/4.9]">
-            <div
-              className="relative w-full h-full rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10 lg:scale-[1.05] lg:origin-center"
-              style={{ background: VISUAL_GRADIENTS[0] }}
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.4),_transparent_50%)] opacity-40" />
-              <div className="absolute bottom-8 left-8 right-8 z-10">
-                <p className="text-white/85 text-sm uppercase tracking-[0.2em] mb-3">Intelligent Technology Solutions</p>
-                <p className="text-white text-2xl md:text-4xl font-heading font-bold leading-tight">
-                  AI, Machine Learning, Product Development and System Integration
-                </p>
-              </div>
+            <div className="relative w-full h-full rounded-2xl overflow-hidden lg:scale-[1.05] lg:origin-center">
+              <img
+                src={torinosoftHeroImg}
+                alt="Smart city skyline with digital data visualization overlay"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </div>
         </div>
@@ -282,6 +278,8 @@ export default function Home() {
         subtitle="Automating construction RFP responses with AI"
         description="We unlock the ability to deliver accelerated RFP responses by automating the commercial construction bid review process. We bring Knowledge and Workflow AI together to format and deliver a final bid proposal that positions your Construction business for growth and success."
         panelTone={2}
+        visualImageSrc={knowledgeWorkflowImg}
+        visualImageAlt="Knowledge and Workflow AI"
         learnMoreHref="/knowledge-workflow-ai"
       />
 

@@ -6,7 +6,7 @@ export default function IndustrySolutionsPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       <Navbar />
       
-      <main className="container mx-auto px-4 md:px-6 py-24">
+      <main className="container mx-auto px-4 md:px-6 pt-44 pb-24">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-foreground">
             Industry Solutions

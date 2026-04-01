@@ -20,7 +20,7 @@ export default function AboutUsPage() {
             </div>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               Our leadership team brings deep experience in scaling emerging technologies
-              and businesses. torinosoft is focused on integrating Contact Center, Data
+              and businesses. Torinosoft is focused on integrating Contact Center, Data
               Management, Knowledge and Workflow AI, and Product Development to help
               enterprises accelerate outcomes across high-growth industries.
             </p>
@@ -94,7 +94,7 @@ export default function AboutUsPage() {
                 </div>
                 <div className="text-sm md:text-base text-muted-foreground leading-relaxed space-y-3">
                   <p>
-                    Kennedy Pereira is the Founder and Chief Executive Officer of torinosoft.
+                    Kennedy Pereira is the Founder and Chief Executive Officer of Torinosoft.
                     Kennedy brings 25+ years of leadership experience across Silicon Valley,
                     Dallas and global technology markets. Over the course of his career, he
                     has launched and scaled startups from $0 to $10M, guided companies
@@ -102,10 +102,10 @@ export default function AboutUsPage() {
                     business unit to $1B+ in revenue.
                   </p>
                   <p>
-                    As Founder and CEO of torinosoft, Kennedy&apos;s experience, insight, and
+                    As Founder and CEO of Torinosoft, Kennedy&apos;s experience, insight, and
                     network have led to rapidly operationalizing innovative Vision AI
                     platforms, building strong operating foundations, and successfully
-                    scaling torinosoft into a market defining disruptor.
+                    scaling Torinosoft into a market defining disruptor.
                   </p>
                   <p>
                     Kennedy has held senior leadership roles across high growth and global
@@ -159,7 +159,7 @@ export default function AboutUsPage() {
                     security serving enterprise and government use cases across multiple
                     industries. Patrick applies his strategic insight, global network, and
                     execution discipline to build, scale, and ensure the long term success
-                    of torinosoft.
+                    of Torinosoft.
                   </p>
                 </div>
               </article>
