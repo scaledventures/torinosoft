@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { FileText, Cookie, Settings } from "lucide-react";
-import logoNew from "@assets/TorinoSoftLogo.png";
+import logoNew from "@assets/TorinosoftLogo.png";
 import pdfIcon from "@assets/pdf-icon.png";
 
 export function Footer() {

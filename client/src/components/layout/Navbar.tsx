@@ -8,7 +8,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import logoNew from "@assets/TorinoSoftLogo.png";
+import logoNew from "@assets/TorinosoftLogo.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

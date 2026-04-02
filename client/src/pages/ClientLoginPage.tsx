@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import clientLoginBg from "@assets/Client-Login-bg.jpeg";
-import logoNew from "@assets/TorinoSoftLogo.png";
+import logoNew from "@assets/TorinosoftLogo.png";
 
 export default function ClientLoginPage() {
   const sectionRef = useRef<HTMLElement | null>(null);
