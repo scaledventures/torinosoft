@@ -5,8 +5,9 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 
 import constructionHeroImg from "../../../attached_assets/Construction-Pic 1.png";
-import constructionFeature1Img from "../../../attached_assets/Construction-Pic 2.png";
-import constructionFeature2Img from "../../../attached_assets/Construction-Pic 3.png";
+import constructionOverviewImg from "../../../attached_assets/Construction-Pic 4.png";
+import constructionKeyChallengesImg from "../../../attached_assets/Construction-Pic 3.png";
+import constructionApproachImg from "../../../attached_assets/Construction-Pic 2.png";
 
 const KEY_CHALLENGES = [
   "Manual takeoff errors on critical project components frequently lead to multi-million dollar discrepancies.",
@@ -59,7 +60,7 @@ export default function ConstructionPage() {
                 </div>
               </div>
               <div className="relative min-h-[340px] md:min-h-[380px] lg:min-h-[420px] rounded-xl overflow-hidden">
-                <img src={constructionFeature1Img} alt="Construction workflows" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={constructionOverviewImg} alt="Construction workflows" className="absolute inset-0 w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -79,7 +80,7 @@ export default function ConstructionPage() {
                 ))}
               </ul>
               <div className="relative min-h-[340px] md:min-h-[380px] lg:min-h-[420px] rounded-xl overflow-hidden">
-                <img src={constructionFeature2Img} alt="Construction key challenges" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={constructionKeyChallengesImg} alt="Construction key challenges" className="absolute inset-0 w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -93,7 +94,7 @@ export default function ConstructionPage() {
             <div className="h-1 w-16 rounded-full bg-primary mb-6" />
             <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-14 items-stretch">
               <div className="order-2 lg:order-1 relative min-h-[340px] md:min-h-[380px] lg:min-h-[420px] rounded-xl overflow-hidden">
-                <img src={constructionFeature2Img} alt="AI-driven construction bidding" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={constructionApproachImg} alt="AI-driven construction bidding" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div className="order-1 lg:order-2">
                 <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">

@@ -5,12 +5,11 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 
-import heroImg from "@assets/knowledge-&-workflow.png";
-import slideImg1 from "@assets/ContactCenterFeature1.png";
-import slideImg2 from "@assets/ContactCenterFeature2.png";
-import slideImg3 from "@assets/ContactCenterFeature3.png";
-import deepDiveImg1 from "@assets/ProductDevelopmentFeature1.png";
-import deepDiveImg2 from "@assets/ProductDevelopmentFeature2.png";
+import heroImg from "@assets/Knowledge-&-workflowHero.png";
+import kwAiPic2 from "@assets/Knowledge WF AI Pic 2.png";
+import kwAiPic3 from "@assets/Knowledge WF AI Pic 3.png";
+import kwAiPic4 from "@assets/Knowledge WF AI Pic 4.png";
+import kwAiPic5 from "@assets/Knowledge WF AI Pic 5.png";
 
 const SLIDES = [
   {
@@ -21,7 +20,7 @@ const SLIDES = [
       "Precision at the speed of 2026. We leverage advanced AI to deliver the industry's most accurate bids, ensuring your project is built on a foundation of data, not guesswork.",
     highlight: "foundation of data",
     accentClass: "bg-[#5E17EB]",
-    image: slideImg1,
+    image: kwAiPic2,
   },
   {
     id: "workflow",
@@ -31,7 +30,7 @@ const SLIDES = [
       "Dominate the 2026 construction market with AI-driven speed that outpaces every competitor's manual takeoff. Our system captures 98% accuracy to eliminate the human errors that kill your margins and project viability. Start securing data-backed wins that turn every bid into a high-profit reality.",
     highlight: "98% accuracy",
     accentClass: "bg-[#39827a]",
-    image: slideImg2,
+    image: kwAiPic3,
   },
   {
     id: "conversation-intelligence",
@@ -41,7 +40,7 @@ const SLIDES = [
       "Our pre-construction workflow utilizes advanced computer vision to automate quantity takeoffs and ensure total inventory precision. We integrate deep-learning algorithms to benchmark historical data against real-time market fluctuations, proactively flagging potential cost anomalies and hidden risks. This AI-facilitated audit provides a high-fidelity project profile, securing feasibility through systematic, evidence-based estimation.",
     highlight: "computer vision",
     accentClass: "bg-[#1f6fff]",
-    image: slideImg3,
+    image: kwAiPic2,
   },
 ];
 
@@ -286,7 +285,7 @@ export default function KnowledgeWorkflowAIPage() {
                     </Link>
                   </div>
                   <div className="aspect-video rounded-xl overflow-hidden">
-                    <img src={deepDiveImg1} alt="AI Agents" className="w-full h-full object-cover" />
+                    <img src={kwAiPic4} alt="AI Agents" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -304,7 +303,7 @@ export default function KnowledgeWorkflowAIPage() {
                     </Link>
                   </div>
                   <div className="order-1 lg:order-1 aspect-video rounded-xl overflow-hidden">
-                    <img src={deepDiveImg2} alt="Agent Assist" className="w-full h-full object-cover" />
+                    <img src={kwAiPic5} alt="Agent Assist" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>

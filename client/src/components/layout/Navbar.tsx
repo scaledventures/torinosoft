@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -8,9 +8,21 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { usePrefersHoverNav } from "@/hooks/use-prefers-hover-nav";
 import logoNew from "@assets/TorinosoftLogo.png";
 
+const NAV_TRIGGER_CLASS =
+  "text-base font-bold text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-all duration-200 flex items-center gap-1.5 uppercase tracking-wider outline-none cursor-pointer px-3 py-2 rounded-lg data-[state=open]:bg-muted/50 data-[state=open]:text-foreground";
+
 export function Navbar() {
+  const [, setLocation] = useLocation();
+  const prefersHoverNav = usePrefersHoverNav();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -79,36 +91,58 @@ export function Navbar() {
           </a>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav — hover menus on mouse; tap/click menus on touch (e.g. iPad) */}
         <div className="hidden xl:flex items-center gap-3">
           <div className="flex items-center gap-2 mr-2">
-            {navItems.map((item) => (
-              <HoverCard key={item.name} openDelay={0} closeDelay={100}>
-                <HoverCardTrigger asChild>
-                  <button
-                    type="button"
-                    className="text-base font-bold text-foreground/80 hover:text-foreground hover:bg-muted/50 transition-all duration-200 flex items-center gap-1.5 uppercase tracking-wider outline-none cursor-pointer px-3 py-2 rounded-lg"
+            {navItems.map((item) =>
+              prefersHoverNav ? (
+                <HoverCard key={item.name} openDelay={0} closeDelay={100}>
+                  <HoverCardTrigger asChild>
+                    <button type="button" className={NAV_TRIGGER_CLASS}>
+                      {item.name} <ChevronDown className="h-3 w-3 opacity-50" />
+                    </button>
+                  </HoverCardTrigger>
+                  <HoverCardContent
+                    sideOffset={6}
+                    align="start"
+                    className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl w-auto p-3 mt-1"
                   >
-                    {item.name} <ChevronDown className="h-3 w-3 opacity-50" />
-                  </button>
-                </HoverCardTrigger>
-                <HoverCardContent
-                  sideOffset={6}
-                  align="start"
-                  className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl w-auto p-3 mt-1"
-                >
-                  <div className="flex flex-col gap-0.5">
+                    <div className="flex flex-col gap-0.5">
+                      {item.options.map((opt) => (
+                        <Link key={opt.path} href={opt.path}>
+                          <a className="text-base py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                            {opt.label}
+                          </a>
+                        </Link>
+                      ))}
+                    </div>
+                  </HoverCardContent>
+                </HoverCard>
+              ) : (
+                <DropdownMenu key={item.name} modal={false}>
+                  <DropdownMenuTrigger asChild>
+                    <button type="button" className={NAV_TRIGGER_CLASS}>
+                      {item.name} <ChevronDown className="h-3 w-3 opacity-50" />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    sideOffset={6}
+                    align="start"
+                    className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl p-2 min-w-[12rem]"
+                  >
                     {item.options.map((opt) => (
-                      <Link key={opt.path} href={opt.path}>
-                        <a className="text-base py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
-                          {opt.label}
-                        </a>
-                      </Link>
+                      <DropdownMenuItem
+                        key={opt.path}
+                        className="text-base py-2.5 px-3 rounded-lg cursor-pointer font-medium focus:bg-primary/10 focus:text-primary"
+                        onSelect={() => setLocation(opt.path)}
+                      >
+                        {opt.label}
+                      </DropdownMenuItem>
                     ))}
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
-            ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              )
+            )}
           </div>
           
           <div className="flex items-center gap-2">
@@ -120,18 +154,21 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile/Tablet Toggle */}
+        {/* Mobile/Tablet Toggle — min touch target ~44px */}
         <button
-          className="xl:hidden text-foreground"
+          type="button"
+          className="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg text-foreground hover:bg-muted/50 active:bg-muted/70"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {/* Mobile/Tablet Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 flex flex-col gap-4 animate-in slide-in-from-top-5 max-h-[calc(100vh-4rem)] overflow-y-auto supports-[height:100dvh]:max-h-[calc(100dvh-4rem)]">
           {navItems.map((item) => (
             <div key={item.name} className="flex flex-col gap-1.5">
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-[0.18em] px-2">{item.name}</span>

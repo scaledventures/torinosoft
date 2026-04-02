@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import { Play, Pause } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,15 @@ export function AutoplayVideoWithPlayPause({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [showControls, setShowControls] = useState(false);
+  const [coarsePointer, setCoarsePointer] = useState(false);
+
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(pointer: coarse)");
+    const sync = () => setCoarsePointer(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -58,8 +67,9 @@ export function AutoplayVideoWithPlayPause({
         type="button"
         onClick={toggle}
         className={cn(
-          "absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity",
-          showControls || !isPlaying ? "opacity-100" : "opacity-0"
+          "absolute inset-0 flex items-center justify-center transition-opacity",
+          coarsePointer && isPlaying ? "bg-black/25" : "bg-black/30",
+          showControls || !isPlaying || coarsePointer ? "opacity-100" : "opacity-0"
         )}
         aria-label={isPlaying ? "Pause" : "Play"}
       >

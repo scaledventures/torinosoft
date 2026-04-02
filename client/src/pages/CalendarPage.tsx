@@ -162,7 +162,7 @@ export default function CalendarPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       <Navbar />
 
-      <main className="relative bg-background min-h-[calc(100vh-64px)]">
+      <main className="relative bg-background min-h-[calc(100vh-64px)] supports-[height:100dvh]:min-h-[calc(100dvh-64px)]">
         {/* Background gradient */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-success/5" />
@@ -204,7 +204,7 @@ export default function CalendarPage() {
               </div>
 
               {/* Calendar Grid */}
-              <div className="grid grid-cols-7 gap-1 mb-5">
+              <div className="grid grid-cols-7 gap-1 sm:gap-1.5 mb-5">
                 {dayNames.map((day) => (
                   <div
                     key={day}
@@ -227,7 +227,7 @@ export default function CalendarPage() {
                       key={idx}
                       onClick={() => handleDateSelect(dayInfo.date, dayInfo.isCurrentMonth)}
                       className={`
-                        aspect-square flex items-center justify-center text-sm font-medium rounded-xl transition-all
+                        min-h-10 min-w-0 aspect-square sm:min-h-11 flex items-center justify-center text-sm font-medium rounded-xl transition-all
                         ${
                           !isClickable
                             ? "text-muted-foreground/30 cursor-not-allowed"
@@ -258,10 +258,11 @@ export default function CalendarPage() {
                     const isSelected = selectedTime === time;
                     return (
                       <button
+                        type="button"
                         key={time}
                         onClick={() => handleTimeSelect(time)}
                         className={`
-                          py-2.5 px-3 rounded-xl text-sm font-medium transition-all text-center
+                          min-h-11 py-2.5 px-2 sm:px-3 rounded-xl text-sm font-medium transition-all text-center
                           ${
                             isSelected
                               ? "bg-success text-success-foreground shadow-lg shadow-success/40 scale-105"

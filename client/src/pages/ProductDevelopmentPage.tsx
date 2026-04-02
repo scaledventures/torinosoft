@@ -8,7 +8,10 @@ import { Button } from "@/components/ui/button";
 import productDevelopmentHeroImg from "@assets/ProductDevelopmentHero.png";
 import productDevelopmentFeature1Img from "@assets/ProductDevelopmentFeature1.png";
 import productDevelopmentFeature2Img from "@assets/ProductDevelopmentFeature2.png";
+import productDevelopmentFeature3Img from "@assets/ProductDevelopmentFeature3.png";
 import productDevelopmentFeature4Img from "@assets/ProductDevelopmentFeature4.png";
+import productDevelopmentFeature5Img from "@assets/ProductDevelopmentFeature5.png";
+import productDevelopmentFeature6Img from "@assets/ProductDevelopmentFeature6.png";
 
 const PRODUCT_DEVELOPMENT_SLIDES = [
   {
@@ -39,7 +42,7 @@ const PRODUCT_DEVELOPMENT_SLIDES = [
       "Digital transformation services help re-engineer core systems, modernize existing technology, and automate business processes for greater efficiency.",
     highlight: "re-engineer core systems",
     accentClass: "bg-[#1f6fff]",
-    image: productDevelopmentFeature4Img,
+    image: productDevelopmentFeature3Img,
   },
 ];
 
@@ -124,7 +127,7 @@ export default function ProductDevelopmentPage() {
     },
     {
       title: "Digital Transformation",
-      image: productDevelopmentFeature1Img,
+      image: productDevelopmentFeature3Img,
       description:
         "We reduce operational complexity, improve agility, and support faster adoption of digital capabilities through structured delivery methods and modern architectures. Our services modernize core systems using AI, ML, automation, and practical upgrades.",
       reverse: false,
@@ -138,14 +141,14 @@ export default function ProductDevelopmentPage() {
     },
     {
       title: "Internet of Things",
-      image: productDevelopmentFeature2Img,
+      image: productDevelopmentFeature5Img,
       description:
         "Our Internet of Things solutions connect devices, systems, and live data streams to create real-time operational visibility. This enables faster monitoring, quicker response, and better decision making across connected operations.",
       reverse: false,
     },
     {
       title: "Cloud and DevOps",
-      image: productDevelopmentFeature4Img,
+      image: productDevelopmentFeature6Img,
       description:
         "Cloud and DevOps services strengthen development and deployment through scalable infrastructure, automation, and continuous delivery practices. We help teams release faster, improve reliability, and reduce operational risk.",
       reverse: true,

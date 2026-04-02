@@ -11,7 +11,7 @@ import productDevelopmentImg from "../../../attached_assets/product-development.
 import contactCenterPlatformImg from "../../../attached_assets/contact-center-platform.png";
 import dataCompressionPlatformImg from "../../../attached_assets/data-compression-platform.png";
 import knowledgeWorkflowImg from "../../../attached_assets/knowledge-&-workflow.png";
-import productDevelopmentPlatformImg from "../../../attached_assets/product-development-platform.png";
+import productDevelopmentPlatformImg from "../../../attached_assets/ProductDevelopmentHero.png";
 import torinosoftHeroImg from "../../../attached_assets/TorinosoftLandingPageImage.png";
 
 const SERVICE_CARD_COLORS = ["#6a2de2", "#39827a", "#1f6fff", "#78afdb", "#feac00"];
