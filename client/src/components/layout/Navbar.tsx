@@ -55,10 +55,10 @@ export function Navbar() {
     { 
       name: "RESOURCES", 
       options: [
-        { label: "Contact Center", path: "/adtech-resources" },
-        { label: "Product Development", path: "/blog/alpr" },
-        { label: "Data Compression", path: "/alpr-resources" },
-        { label: "Knowledge & Workflow AI", path: "/blog/adtech" }
+        { label: "Contact Center", path: "/contact-center-resources" },
+        { label: "Product Development", path: "/product-development-resources" },
+        { label: "Data Compression", path: "/data-compression-resources" },
+        { label: "Knowledge & Workflow AI", path: "/knowledge-workflow-ai-resources" }
       ]
     },
     { 
@@ -80,9 +80,9 @@ export function Navbar() {
           : "bg-transparent border-transparent"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between xl:justify-start h-16 min-w-0">
         <Link href="/">
-          <a className="flex items-center gap-2 group">
+          <a className="flex shrink-0 items-center gap-2 group">
             <img
               src={logoNew}
               alt="Torinosoft"
@@ -91,67 +91,67 @@ export function Navbar() {
           </a>
         </Link>
 
-        {/* Desktop Nav — hover menus on mouse; tap/click menus on touch (e.g. iPad) */}
-        <div className="hidden xl:flex items-center gap-3">
-          <div className="flex items-center gap-2 mr-2">
-            {navItems.map((item) =>
-              prefersHoverNav ? (
-                <HoverCard key={item.name} openDelay={0} closeDelay={100}>
-                  <HoverCardTrigger asChild>
-                    <button type="button" className={NAV_TRIGGER_CLASS}>
-                      {item.name} <ChevronDown className="h-3 w-3 opacity-50" />
-                    </button>
-                  </HoverCardTrigger>
-                  <HoverCardContent
-                    sideOffset={6}
-                    align="start"
-                    className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl w-auto p-3 mt-1"
-                  >
-                    <div className="flex flex-col gap-0.5">
-                      {item.options.map((opt) => (
-                        <Link key={opt.path} href={opt.path}>
-                          <a className="text-base py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
-                            {opt.label}
-                          </a>
-                        </Link>
-                      ))}
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-              ) : (
-                <DropdownMenu key={item.name} modal={false}>
-                  <DropdownMenuTrigger asChild>
-                    <button type="button" className={NAV_TRIGGER_CLASS}>
-                      {item.name} <ChevronDown className="h-3 w-3 opacity-50" />
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent
-                    sideOffset={6}
-                    align="start"
-                    className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl p-2 min-w-[12rem]"
-                  >
+        {/* Desktop: 30% header width empty after logo, then nav fills rest (split between headings) */}
+        <div className="hidden xl:block shrink-0 w-[30%]" aria-hidden />
+
+        <div className="hidden xl:flex flex-1 items-center justify-between min-w-0">
+          {navItems.map((item) =>
+            prefersHoverNav ? (
+              <HoverCard key={item.name} openDelay={0} closeDelay={100}>
+                <HoverCardTrigger asChild>
+                  <button type="button" className={cn(NAV_TRIGGER_CLASS, "shrink-0")}>
+                    {item.name} <ChevronDown className="h-3 w-3 opacity-50" />
+                  </button>
+                </HoverCardTrigger>
+                <HoverCardContent
+                  sideOffset={6}
+                  align="start"
+                  className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl w-auto p-3 mt-1"
+                >
+                  <div className="flex flex-col gap-0.5">
                     {item.options.map((opt) => (
-                      <DropdownMenuItem
-                        key={opt.path}
-                        className="text-base py-2.5 px-3 rounded-lg cursor-pointer font-medium focus:bg-primary/10 focus:text-primary"
-                        onSelect={() => setLocation(opt.path)}
-                      >
-                        {opt.label}
-                      </DropdownMenuItem>
+                      <Link key={opt.path} href={opt.path}>
+                        <a className="text-base py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary cursor-pointer transition-all duration-200 font-medium whitespace-nowrap">
+                          {opt.label}
+                        </a>
+                      </Link>
                     ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              )
-            )}
-          </div>
-          
-          <div className="flex items-center gap-2">
-            <Link href="/get-in-touch">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-5 flex items-center gap-2 h-9 text-base">
-                Contact Us <ExternalLink className="h-3.5 w-3.5" />
-              </Button>
-            </Link>
-          </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
+            ) : (
+              <DropdownMenu key={item.name} modal={false}>
+                <DropdownMenuTrigger asChild>
+                  <button type="button" className={cn(NAV_TRIGGER_CLASS, "shrink-0")}>
+                    {item.name} <ChevronDown className="h-3 w-3 opacity-50" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  sideOffset={6}
+                  align="start"
+                  className="bg-card/98 backdrop-blur-xl border border-border/50 shadow-lg rounded-xl p-2 min-w-[12rem]"
+                >
+                  {item.options.map((opt) => (
+                    <DropdownMenuItem
+                      key={opt.path}
+                      className="text-base py-2.5 px-3 rounded-lg cursor-pointer font-medium focus:bg-primary/10 focus:text-primary"
+                      onSelect={() => setLocation(opt.path)}
+                    >
+                      {opt.label}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )
+          )}
+        </div>
+
+        <div className="hidden xl:flex shrink-0 items-center xl:ml-4">
+          <Link href="/get-in-touch">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-5 flex items-center gap-2 h-9 text-base">
+              Contact Us <ExternalLink className="h-3.5 w-3.5" />
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile/Tablet Toggle — min touch target ~44px */}

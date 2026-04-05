@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-import contactCenterImg from "../../../attached_assets/contact-center.png";
+import contactCenterLandingImg from "../../../attached_assets/ContactCenterLanding.png";
 import dataCompressionImg from "../../../attached_assets/data-compression.png";
 import productDevelopmentImg from "../../../attached_assets/product-development.png";
 import contactCenterPlatformImg from "../../../attached_assets/contact-center-platform.png";
@@ -79,6 +79,7 @@ function ServiceSuiteSection({
   reverse = false,
   visualImageSrc,
   visualImageAlt,
+  visualImageObjectPosition = "center",
   learnMoreHref = "/get-in-touch",
 }: {
   title: string;
@@ -88,6 +89,8 @@ function ServiceSuiteSection({
   reverse?: boolean;
   visualImageSrc?: string;
   visualImageAlt?: string;
+  /** `top` keeps the top of the image visible and crops overflow from the bottom (with object-cover). */
+  visualImageObjectPosition?: "center" | "top";
   learnMoreHref?: string;
 }) {
   function TextSide({
@@ -125,11 +128,13 @@ function ServiceSuiteSection({
     panelTone,
     visualImageSrc,
     visualImageAlt,
+    objectPosition,
   }: {
     title: string;
     panelTone: number;
     visualImageSrc?: string;
     visualImageAlt?: string;
+    objectPosition: "center" | "top";
   }) {
     return (
       <div className="relative w-full self-start aspect-[4/3] rounded-2xl overflow-hidden">
@@ -137,7 +142,7 @@ function ServiceSuiteSection({
           <img
             src={visualImageSrc}
             alt={visualImageAlt ?? title}
-            className="w-full h-full object-cover object-center"
+            className={`w-full h-full object-cover ${objectPosition === "top" ? "object-top" : "object-center"}`}
             loading="lazy"
           />
         ) : (
@@ -162,13 +167,25 @@ function ServiceSuiteSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {reverse ? (
             <>
-              <VisualSide title={title} panelTone={panelTone} visualImageSrc={visualImageSrc} visualImageAlt={visualImageAlt} />
+              <VisualSide
+                title={title}
+                panelTone={panelTone}
+                visualImageSrc={visualImageSrc}
+                visualImageAlt={visualImageAlt}
+                objectPosition={visualImageObjectPosition}
+              />
               <TextSide title={title} subtitle={subtitle} description={description} learnMoreHref={learnMoreHref} />
             </>
           ) : (
             <>
               <TextSide title={title} subtitle={subtitle} description={description} learnMoreHref={learnMoreHref} />
-              <VisualSide title={title} panelTone={panelTone} visualImageSrc={visualImageSrc} visualImageAlt={visualImageAlt} />
+              <VisualSide
+                title={title}
+                panelTone={panelTone}
+                visualImageSrc={visualImageSrc}
+                visualImageAlt={visualImageAlt}
+                objectPosition={visualImageObjectPosition}
+              />
             </>
           )}
         </div>
@@ -236,9 +253,7 @@ function SeeTheResultsCarousel() {
             <div className="max-w-md p-4 md:p-8">
               <div className="rounded-2xl bg-foreground/80 backdrop-blur-sm p-5 md:p-8 border border-primary-foreground/10">
                 <h2 className="text-2xl md:text-4xl font-heading font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
-                  See the results
-                  <br />
-                  for yourself
+                  Ready to engage?
                 </h2>
                 <Button
                   asChild
@@ -311,8 +326,9 @@ export default function Home() {
         subtitle="Powering the world's leading customer experiences"
         description="AI is rapidly transforming Contact Centers and its impact transcends both agents and consumers. As a leading reseller of Cresta's modern contact center solutions, we help Enterprises and Government deliver delight across the customer journey with greater speed, visibility, and consistency."
         panelTone={0}
-        visualImageSrc={contactCenterImg}
+        visualImageSrc={contactCenterLandingImg}
         visualImageAlt="Contact center"
+        visualImageObjectPosition="top"
       />
 
       <ServiceSuiteSection
@@ -352,7 +368,7 @@ export default function Home() {
               One Partner
             </h2>
             <OnePartnerRotatingTaglines />
-            <Link href="/platform-architecture">
+            <Link href="/service-architecture">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-8">
                 Explore Service Architecture <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

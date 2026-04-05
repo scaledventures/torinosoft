@@ -33,8 +33,15 @@ export default function DataManagementPage() {
           />
           <div className="absolute inset-0">
             <div className="mx-auto w-full pl-4 pr-4 pt-4 md:pl-10 md:pt-6 lg:pl-16 lg:pt-8">
-              <div className="inline-flex max-w-2xl bg-black/35 text-primary-foreground rounded-2xl px-5 py-4 md:px-8 md:py-6 shadow-xl">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">Data Management Platform</h1>
+              <div className="inline-flex flex-col gap-3 md:gap-4 max-w-2xl bg-black/35 text-primary-foreground rounded-2xl px-5 py-4 md:px-8 md:py-6 shadow-xl">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
+                  Data Management Platform
+                </h1>
+                <p className="text-sm md:text-base leading-relaxed text-primary-foreground/95 max-w-xl">
+                  We convert sensitive data into secure, compressed mathematical formats that retain full utility without
+                  exposing raw records. This lowers infrastructure costs, accelerates insights, and drastically reduces
+                  breach risks by eliminating the need to move vulnerable source data.
+                </p>
               </div>
             </div>
           </div>

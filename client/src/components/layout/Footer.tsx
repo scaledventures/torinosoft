@@ -51,28 +51,28 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm font-sans">
               <li className="pl-4 text-muted-foreground">
-                <Link href="/adtech-resources">
+                <Link href="/contact-center-resources">
                   <a className="hover:text-primary transition-colors">
                     &gt; Contact Center
                   </a>
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/blog/alpr">
+                <Link href="/product-development-resources">
                   <a className="hover:text-primary transition-colors">
                     &gt; Product Development
                   </a>
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/alpr-resources">
+                <Link href="/data-compression-resources">
                   <a className="hover:text-primary transition-colors">
                     &gt; Data Compression
                   </a>
                 </Link>
               </li>
               <li className="pl-4 text-muted-foreground">
-                <Link href="/blog/adtech">
+                <Link href="/knowledge-workflow-ai-resources">
                   <a className="hover:text-primary transition-colors">
                     &gt; Knowledge &amp; Workflow AI
                   </a>
@@ -153,7 +153,7 @@ export function Footer() {
 
         {/* Row 3: Copyright + legal links */}
         <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm font-sans">
-          <p className="text-muted-foreground font-sans">© 2026 Scaled Ventures dba Torinosoft</p>
+          <p className="text-muted-foreground font-sans">© 2026 Scaled Ventures LLC dba Torinosoft</p>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2 text-primary font-sans">
             <div className="flex h-10 items-center gap-2 shrink-0">
               <Link href="/terms-of-service">

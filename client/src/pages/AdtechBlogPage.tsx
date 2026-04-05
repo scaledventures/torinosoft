@@ -51,7 +51,7 @@ export default function AdtechBlogPage() {
                 Real-Time Personalized Campaigns that Drive ROI
                 </p>
               </div>
-              <Link href="/calendar">
+              <Link href="/contact-center">
                 <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-11 text-xs md:text-sm leading-snug text-center">
                 Know more
                 </Button>
@@ -113,7 +113,7 @@ export default function AdtechBlogPage() {
                   Retail Advertising Continues to Miss the Point of Purchase Decision.
                 </p>
               </div>
-              <Link href="/whitepaper/adtech">
+              <Link href="/contact-center">
                 <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-5 h-11 text-xs md:text-sm leading-snug text-center">
                 Here’s Why
                 </Button>
