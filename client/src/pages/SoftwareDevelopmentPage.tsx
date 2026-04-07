@@ -38,9 +38,9 @@ export default function SoftwareDevelopmentPage() {
               <div className="inline-flex flex-col gap-3 md:gap-4 max-w-2xl bg-black/35 text-primary-foreground rounded-2xl px-5 py-4 md:px-8 md:py-6 shadow-xl">
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">Software Development</h1>
                 <p className="text-sm md:text-base leading-relaxed text-primary-foreground/95 max-w-xl">
-                  We modernize legacy environments with scalable, AI-driven custom software to accelerate your delivery
-                  speed. Our continuous engineering practices build resilient digital foundations that drive long-term
-                  operational growth.
+                  We modernize legacy environments with scalable, AI-driven custom software to accelerate business
+                  outcomes. Our agile engineering approach delivers a digital foundation that accelerates innovation and
+                  growth.
                 </p>
               </div>
             </div>

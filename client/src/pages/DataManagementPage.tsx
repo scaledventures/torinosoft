@@ -39,8 +39,8 @@ export default function DataManagementPage() {
                 </h1>
                 <p className="text-sm md:text-base leading-relaxed text-primary-foreground/95 max-w-xl">
                   We convert sensitive data into secure, compressed mathematical formats that retain full utility without
-                  exposing raw records. This lowers infrastructure costs, accelerates insights, and drastically reduces
-                  breach risks by eliminating the need to move vulnerable source data.
+                  exposing raw records. This lowers infrastructure costs and accelerates insights, while eliminating the
+                  need to move vulnerable source data.
                 </p>
               </div>
             </div>
