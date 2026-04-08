@@ -293,21 +293,22 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col justify-start pt-20 md:pt-24 pb-8 md:pb-10 lg:min-h-[100dvh] lg:pb-8 overflow-hidden hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
-        <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 lg:items-stretch items-start relative z-0 flex-1">
-          <div className="z-10 flex min-h-0 flex-col gap-5 md:gap-6 lg:h-full lg:max-w-none lg:justify-between">
+        <div className="container relative z-0 mx-auto grid flex-1 grid-cols-1 items-start gap-8 px-4 md:px-6 lg:grid-cols-2 lg:items-start lg:gap-10">
+          {/* Single hero copy stack: no justify-between / h-full — avoids One Partner drifting down when the window grows */}
+          <div className="z-10 min-w-0 max-w-none space-y-5 text-left md:space-y-6 lg:self-start">
             <div className="space-y-3 md:space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold leading-[1.1] tracking-tight">
                 <span className="text-black">Product</span>{" "}
                 <span className="text-gradient">Foundry</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
                 We pair AI, Machine Learning, Product Development and System Integration to deliver intelligent
                 technology solutions that help Enterprises and Government innovate, improve efficiency, manage
                 complexity, and accelerate growth.
               </p>
-              <div className="text-base md:text-lg text-foreground max-w-2xl">
-                <span className="font-semibold mb-2 block">Our offerings</span>
-                <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-2 text-left">
+              <div className="max-w-2xl text-base text-foreground md:text-lg">
+                <span className="mb-2 block font-semibold">Our offerings</span>
+                <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-left sm:gap-x-8 md:gap-x-10">
                   <span className="min-w-0">Contact Center</span>
                   <span className="min-w-0">Product Development</span>
                   <span className="min-w-0">Data Compression</span>
@@ -316,8 +317,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-left">
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-2 leading-tight">
+            <div>
+              <h2 className="mb-2 text-2xl font-heading font-bold leading-tight text-foreground md:text-3xl">
                 One Partner
               </h2>
               <OnePartnerRotatingTaglines compact align="left" />
@@ -333,7 +334,7 @@ export default function Home() {
               <img
                 src={torinosoftHeroImg}
                 alt="Smart city skyline with digital data visualization overlay"
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover object-top"
               />
             </div>
           </div>

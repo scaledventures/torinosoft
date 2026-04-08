@@ -11,33 +11,34 @@ export default function ServiceArchitecturePage() {
       <Navbar />
 
       <main className="pt-20 md:pt-24 pb-20 md:pb-24">
-        {/* Hero / Intro */}
-        <section className="section-soft border-b border-border/60 pb-14 md:pb-20">
-          <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-start">
+        {/* Hero / Intro — on laptop: aim for one viewport height, two-line title */}
+        <section className="section-soft border-b border-border/60 pb-10 md:pb-12 lg:flex lg:min-h-[calc(100dvh-9rem)] lg:flex-col lg:justify-center lg:pb-8">
+          <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 px-4 md:px-6 lg:min-h-0 lg:grid-cols-2 lg:gap-8 xl:gap-10">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
+              className="min-w-0"
             >
-              <p className="text-primary font-bold tracking-[0.24em] uppercase text-base md:text-lg mb-4">
+              <p className="mb-3 text-base font-bold uppercase tracking-[0.24em] text-primary md:text-lg lg:mb-2">
                 Service Architecture
               </p>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-tight mb-5">
-                Engineered for Real-Time Insight,
-                <span className="block text-primary">At the Edge.</span>
+              <h1 className="mb-4 font-heading text-2xl font-bold leading-[1.15] tracking-tight md:text-3xl lg:mb-3 lg:line-clamp-2 lg:min-h-[2.55em] lg:text-[clamp(1.375rem,2.1vw,2rem)] xl:text-[clamp(1.5rem,2.15vw,2.25rem)]">
+                Engineered for Real-Time Insight,{" "}
+                <span className="text-primary">At the Edge.</span>
               </h1>
-              <div className="space-y-5 max-w-2xl">
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              <div className="max-w-2xl space-y-4 text-base text-muted-foreground leading-relaxed md:text-lg lg:space-y-3 lg:leading-snug">
+                <p>
                   We provide personalized, high-touch service tailored to your business needs, ensuring seamless
                   integration and optimized performance. With industry expertise and agility, we deliver innovative
                   solutions faster and more efficiently than larger firms. Partnering with us means a dedicated team
                   focused on your success, offering unmatched attention to detail and long-term value.
                 </p>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                <p>
                   We start with the status quo, automate the mundane, and transform the human experience to solve
                   complex challenges in contact centers, product development, data management, and construction.
                 </p>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                <p>
                   Our process integrates AI, computer vision, OCR, encryption, compression, tokenization, edge
                   computing, real-time video processing, micro data centers, virtualized environments, and open APIs to
                   deliver lasting value and exceptional outcomes. Our approach ensures reliable performance in complex,
@@ -45,7 +46,7 @@ export default function ServiceArchitecturePage() {
                 </p>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-6 lg:mt-5">
                 <Link href="/calendar">
                   <Button size="lg" className="rounded-full">
                     Talk to our team
@@ -58,24 +59,24 @@ export default function ServiceArchitecturePage() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className="lg:mt-12"
+              className="min-w-0"
             >
-              <div className="rounded-2xl border border-border/60 bg-card/80 backdrop-blur-sm p-6 md:p-7 space-y-5 shadow-lg shadow-primary/5">
+              <div className="space-y-4 rounded-2xl border border-border/60 bg-card/80 p-5 shadow-lg shadow-primary/5 backdrop-blur-sm md:p-6 lg:space-y-3.5 lg:p-5 xl:p-6">
                 <div>
-                  <h2 className="text-lg md:text-xl font-heading font-semibold leading-snug">
+                  <h2 className="font-heading text-lg font-semibold leading-snug md:text-xl">
                     Service Delivery Architecture
                   </h2>
-                  <p className="text-sm md:text-base text-primary font-semibold mt-2 leading-snug">
+                  <p className="mt-1.5 text-sm font-semibold leading-snug text-primary md:text-base">
                     How we differentiate to deliver lasting value
                   </p>
                 </div>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed md:text-base lg:leading-snug">
                   Our service delivery architecture aligns with business goals, leverages agile methodologies, and
                   prioritizes customer-centric design to drive innovation and revenue growth. With real-time data
                   insights, scalable technology, proactive risk management, and executive dashboards, it ensures
                   transparency, efficiency, and measurable impact.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm md:text-base text-muted-foreground">
+                <div className="grid grid-cols-1 gap-x-5 gap-y-3 text-sm text-muted-foreground sm:grid-cols-2 md:text-base lg:gap-x-4 lg:gap-y-2.5 lg:leading-snug">
                   <div className="flex gap-2.5">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden />
                     <span>
