@@ -1,14 +1,16 @@
 import { ResourceWhitepaperShell } from "@/components/resources/ResourceWhitepaperShell";
-import placeholderWhitepaperPdf from "../../../attached_assets/pdfs/17032026_Whitepaper_AdTech.pdf";
+import productDevelopmentWhitepaperPdf from "../../../attached_assets/Whitepapers/White Paper-Product Development.pdf";
 
 export default function ProductDevelopmentWhitepaperPage() {
   return (
     <ResourceWhitepaperShell
       eyebrow="Product Development · Whitepaper"
-      title="Product development whitepaper — title pending"
+      title="Product Development — Whitepaper"
       backHref="/product-development-resources"
       backLabel="Product Development Resources"
-      pdfFile={placeholderWhitepaperPdf}
+      pdfFile={productDevelopmentWhitepaperPdf}
+      learnMoreHref="/product-development"
+      learnMoreLabel="Learn more"
     />
   );
 }

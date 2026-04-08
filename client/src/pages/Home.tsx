@@ -314,13 +314,6 @@ export default function Home() {
                   <span className="min-w-0">Knowledge &amp; Workflow AI</span>
                 </div>
               </div>
-              <div className="pt-0.5">
-                <Link href="/get-in-touch">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-14 px-10 text-lg shadow-lg shadow-primary/20">
-                    Contact Us <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-              </div>
             </div>
 
             <div className="text-left">

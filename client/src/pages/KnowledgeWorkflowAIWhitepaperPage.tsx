@@ -1,14 +1,16 @@
 import { ResourceWhitepaperShell } from "@/components/resources/ResourceWhitepaperShell";
-import placeholderWhitepaperPdf from "../../../attached_assets/pdfs/17032026_Whitepaper_AdTech.pdf";
+import knowledgeWorkflowAiWhitepaperPdf from "../../../attached_assets/Whitepapers/White Paper-Knowledge AI.pdf";
 
 export default function KnowledgeWorkflowAIWhitepaperPage() {
   return (
     <ResourceWhitepaperShell
       eyebrow="Knowledge & Workflow AI · Whitepaper"
-      title="Knowledge and workflow AI whitepaper — title pending"
+      title="Knowledge & Workflow AI — Whitepaper"
       backHref="/knowledge-workflow-ai-resources"
       backLabel="Knowledge & Workflow AI Resources"
-      pdfFile={placeholderWhitepaperPdf}
+      pdfFile={knowledgeWorkflowAiWhitepaperPdf}
+      learnMoreHref="/knowledge-workflow-ai"
+      learnMoreLabel="Learn more"
     />
   );
 }

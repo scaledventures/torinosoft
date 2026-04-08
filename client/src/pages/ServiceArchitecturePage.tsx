@@ -10,7 +10,7 @@ export default function ServiceArchitecturePage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans">
       <Navbar />
 
-      <main className="pt-24 md:pt-28 pb-20 md:pb-24">
+      <main className="pt-20 md:pt-24 pb-20 md:pb-24">
         {/* Hero / Intro */}
         <section className="section-soft border-b border-border/60 pb-14 md:pb-20">
           <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-start">
@@ -28,24 +28,20 @@ export default function ServiceArchitecturePage() {
               </h1>
               <div className="space-y-5 max-w-2xl">
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  We offer personalized, high-touch service tailored to your unique business needs, ensuring seamless
-                  integration and optimized performance. With specialized industry expertise and a focus on agility, we
-                  deliver innovative solutions faster and more efficiently than larger firms. Partnering with us means
-                  gaining a dedicated team committed to your success, providing unmatched attention to detail and
-                  long-term value.
+                  We provide personalized, high-touch service tailored to your business needs, ensuring seamless
+                  integration and optimized performance. With industry expertise and agility, we deliver innovative
+                  solutions faster and more efficiently than larger firms. Partnering with us means a dedicated team
+                  focused on your success, offering unmatched attention to detail and long-term value.
                 </p>
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  We start with the status quo, automate the mundane and transform the human experience when solving
-                  complex use cases across contact center, product development, data management and construction.
+                  We start with the status quo, automate the mundane, and transform the human experience to solve
+                  complex challenges in contact centers, product development, data management, and construction.
                 </p>
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Our process combines a variety of technologies across AI, advanced computer vision, OCR, encryption,
-                  compression, tokenization, edge computing, real-time video processing, micro data centers, virtualized
-                  environments, and open APIs to deliver lasting value and realize unmatched outcomes.
-                </p>
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Our approach ensures service delivery that&apos;s designed to perform in complex, high-traffic
-                  environments while maintaining strict data security and operational reliability.
+                  Our process integrates AI, computer vision, OCR, encryption, compression, tokenization, edge
+                  computing, real-time video processing, micro data centers, virtualized environments, and open APIs to
+                  deliver lasting value and exceptional outcomes. Our approach ensures reliable performance in complex,
+                  high-traffic environments while maintaining strict data security and operational integrity.
                 </p>
               </div>
 
