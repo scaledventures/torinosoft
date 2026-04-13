@@ -42,8 +42,28 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /*
+   * Chrome often uses overlay scrollbars (full content width). Edge often uses a classic scrollbar that
+   * shrinks the layout viewport — looks like extra side inset vs Chrome. Force a vertical scrollbar on
+   * html so both browsers use the same layout width (classic fix; scrollbar always visible when content is short).
+   */
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    overflow-y: scroll;
+    text-size-adjust: 100%;
+  }
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-accent/30 selection:text-foreground;
+    @apply m-0 min-h-dvh w-full max-w-full overflow-x-clip bg-background p-0 text-foreground font-sans antialiased selection:bg-accent/30 selection:text-foreground;
+  }
+  #root {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100dvh;
+    overflow-x: clip;
   }
   img {
     @apply rounded-2xl;

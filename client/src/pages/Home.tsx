@@ -57,7 +57,7 @@ function OnePartnerRotatingTaglines({
 
   return (
     <div
-      className={`text-lg md:text-xl text-primary font-bold text-pretty ${compact ? "mb-2 md:mb-3" : "mb-3 md:mb-4"} ${isLeft ? "px-0" : "px-2"}`}
+      className={`text-lg md:text-xl text-primary font-bold text-pretty ${compact ? "mb-0" : "mb-3 md:mb-4"} ${isLeft ? "px-0" : "px-2"}`}
       aria-live="polite"
       aria-atomic="true"
     >
@@ -290,38 +290,33 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/30">
       <Navbar />
 
-      {/* lg+: flex row — row height follows left column; right image stretches to match (ends with CTA), not viewport */}
-      <section className="relative flex min-h-screen flex-col justify-start overflow-hidden pt-20 md:pt-24 pb-8 md:pb-10 hero-pattern">
+      {/* Hero left: single flex column gap — equal spacing between title, intro, offerings, One Partner, taglines, CTA */}
+      <section className="relative flex min-h-screen flex-col justify-start overflow-hidden pt-20 md:pt-24 pb-2 md:pb-3 lg:pb-2 hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
-        <div className="container relative z-0 mx-auto flex w-full min-w-0 flex-col gap-8 px-4 md:px-6 lg:flex-row lg:items-stretch lg:gap-10">
-          <div className="z-10 min-w-0 max-w-none flex-1 space-y-5 text-left md:space-y-6">
-            <div className="space-y-3 md:space-y-4">
-              <h1 className="text-5xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold leading-[1.1] tracking-tight">
-                <span className="text-black">Product</span>{" "}
-                <span className="text-gradient">Foundry</span>
-              </h1>
-              <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
-                We pair AI, Machine Learning, Product Development and System Integration to deliver intelligent
-                technology solutions that help Enterprises and Government innovate, improve efficiency, manage
-                complexity, and accelerate growth.
-              </p>
-              <div className="max-w-2xl text-base text-foreground md:text-lg">
-                <span className="mb-2 block font-semibold">Our offerings</span>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-left sm:gap-x-8 md:gap-x-10">
-                  <span className="min-w-0">Contact Center</span>
-                  <span className="min-w-0">Product Development</span>
-                  <span className="min-w-0">Data Compression</span>
-                  <span className="min-w-0">Knowledge &amp; Workflow AI</span>
-                </div>
+        <div className="container relative z-0 mx-auto grid w-full min-w-0 grid-cols-1 gap-8 px-4 md:px-6 lg:grid-cols-2 lg:items-stretch lg:gap-10">
+          <div className="z-10 flex min-w-0 max-w-none flex-col gap-8 text-left md:gap-10">
+            <h1 className="text-5xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold leading-[1.1] tracking-tight">
+              <span className="text-black">Product</span>{" "}
+              <span className="text-gradient">Foundry</span>
+            </h1>
+            <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
+              We pair AI, Machine Learning, Product Development and System Integration to deliver intelligent
+              technology solutions that help Enterprises and Government innovate, improve efficiency, manage
+              complexity, and accelerate growth.
+            </p>
+            <div className="max-w-2xl space-y-2 text-base text-foreground md:text-lg">
+              <span className="block font-semibold">Our offerings</span>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-left sm:gap-x-8 md:gap-x-10">
+                <span className="min-w-0">Contact Center</span>
+                <span className="min-w-0">Product Development</span>
+                <span className="min-w-0">Data Compression</span>
+                <span className="min-w-0">Knowledge &amp; Workflow AI</span>
               </div>
             </div>
-
+            <h2 className="text-2xl font-heading font-bold leading-tight text-foreground md:text-3xl">One Partner</h2>
+            <OnePartnerRotatingTaglines compact align="left" />
             <div>
-              <h2 className="mb-2 text-2xl font-heading font-bold leading-tight text-foreground md:text-3xl">
-                One Partner
-              </h2>
-              <OnePartnerRotatingTaglines compact align="left" />
               <Link href="/service-architecture">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full h-14 px-10 text-lg shadow-lg shadow-primary/20">
                   Explore Service Architecture <ArrowRight className="ml-2 h-5 w-5" />
@@ -329,12 +324,15 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative mx-auto aspect-[7.9/4.9] w-full min-h-0 max-w-full lg:mx-0 lg:aspect-auto lg:flex lg:min-h-0 lg:min-w-0 lg:flex-1 lg:flex-col">
-            <div className="relative h-full min-h-[220px] w-full flex-1 overflow-hidden rounded-2xl lg:min-h-0">
+          <div className="flex w-full min-h-0 min-w-0 flex-col lg:h-full lg:min-h-0">
+            {/* Mobile: block img at full content width (no landscape aspect box → no side letterboxing). lg+: fill column height with object-contain. */}
+            <div className="relative mx-auto w-full min-w-0 overflow-hidden rounded-2xl bg-transparent lg:mx-0 lg:ml-auto lg:flex-1 lg:min-h-0 lg:max-h-full lg:max-w-full">
               <img
                 src={torinosoftHeroImg}
-                alt="Smart city skyline with digital data visualization overlay"
-                className="h-full w-full object-cover object-top lg:absolute lg:inset-0 lg:h-full lg:w-full"
+                alt="Torinosoft — smart city and digital innovation"
+                className="pointer-events-none block h-auto w-full max-w-none lg:absolute lg:inset-0 lg:box-border lg:h-full lg:w-full lg:max-h-full lg:object-contain lg:object-center"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
           </div>
