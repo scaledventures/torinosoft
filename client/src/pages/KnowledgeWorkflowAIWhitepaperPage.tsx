@@ -1,5 +1,5 @@
 import { ResourceWhitepaperShell } from "@/components/resources/ResourceWhitepaperShell";
-import knowledgeWorkflowAiWhitepaperPdf from "../../../attached_assets/Whitepapers/White Paper-Knowledge AI.pdf";
+import knowledgeWorkflowAiWhitepaperPdf from "@assets/Whitepapers/White Paper-Knowledge AI.pdf";
 
 export default function KnowledgeWorkflowAIWhitepaperPage() {
   return (

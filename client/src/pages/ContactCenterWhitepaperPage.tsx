@@ -1,5 +1,5 @@
 import { ResourceWhitepaperShell } from "@/components/resources/ResourceWhitepaperShell";
-import placeholderWhitepaperPdf from "../../../attached_assets/pdfs/17032026_Whitepaper_AdTech.pdf";
+import placeholderWhitepaperPdf from "@assets/pdfs/17032026_Whitepaper_AdTech.pdf";
 
 export default function ContactCenterWhitepaperPage() {
   return (

@@ -4,10 +4,10 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 
-import constructionHeroImg from "../../../attached_assets/Construction-Pic 1.png";
-import constructionOverviewImg from "../../../attached_assets/Construction-Pic 4.png";
-import constructionKeyChallengesImg from "../../../attached_assets/Construction-Pic 3.png";
-import constructionApproachImg from "../../../attached_assets/Construction-Pic 2.png";
+import constructionHeroImg from "@assets/Construction-Pic 1.png";
+import constructionOverviewImg from "@assets/Construction-Pic 4.png";
+import constructionKeyChallengesImg from "@assets/Construction-Pic 3.png";
+import constructionApproachImg from "@assets/Construction-Pic 2.png";
 
 const KEY_CHALLENGES = [
   "Manual takeoff errors on critical project components frequently lead to multi-million dollar discrepancies.",

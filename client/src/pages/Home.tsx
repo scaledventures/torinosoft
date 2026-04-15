@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, Calendar, ChevronRight } from "lucide-react";
@@ -6,14 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-import contactCenterLandingImg from "../../../attached_assets/ContactCenterLanding.png";
-import dataCompressionImg from "../../../attached_assets/data-compression.png";
-import productDevelopmentImg from "../../../attached_assets/product-development.png";
-import contactCenterPlatformImg from "../../../attached_assets/contact-center-platform.png";
-import dataCompressionPlatformImg from "../../../attached_assets/CarouselDataCompressionPlatform.png";
-import knowledgeWorkflowImg from "../../../attached_assets/knowledge-&-workflow.png";
-import productDevelopmentPlatformImg from "../../../attached_assets/ProductDevelopmentHero.png";
-import torinosoftHeroImg from "../../../attached_assets/TorinosoftLandingPageImage.png";
+import contactCenterLandingImg from "@assets/ContactCenterLanding.png";
+import dataCompressionImg from "@assets/data-compression.png";
+import productDevelopmentImg from "@assets/product-development.png";
+import contactCenterPlatformImg from "@assets/contact-center-platform.png";
+import dataCompressionPlatformImg from "@assets/CarouselDataCompressionPlatform.png";
+import knowledgeWorkflowImg from "@assets/knowledge-&-workflow.png";
+import productDevelopmentPlatformImg from "@assets/ProductDevelopmentHero.png";
+import torinosoftHeroImg from "@assets/TorinosoftLandingPageImageNew.png";
 
 const SERVICE_CARD_COLORS = ["#6a2de2", "#39827a", "#1f6fff", "#78afdb", "#feac00"];
 
@@ -286,6 +286,35 @@ function SeeTheResultsCarousel() {
 }
 
 export default function Home() {
+  const heroCopyRef = useRef<HTMLDivElement>(null);
+  /** lg+: max height for the image column = left column height so the row does not grow past the copy (stays in first viewport with the hero). */
+  const [lgHeroPairPx, setLgHeroPairPx] = useState<number | undefined>(undefined);
+
+  useLayoutEffect(() => {
+    const el = heroCopyRef.current;
+    if (!el) return;
+
+    const mq = window.matchMedia("(min-width: 1024px)");
+
+    const sync = () => {
+      if (!mq.matches) {
+        setLgHeroPairPx(undefined);
+        return;
+      }
+      setLgHeroPairPx(el.offsetHeight);
+    };
+
+    const ro = new ResizeObserver(sync);
+    ro.observe(el);
+    mq.addEventListener("change", sync);
+    sync();
+
+    return () => {
+      ro.disconnect();
+      mq.removeEventListener("change", sync);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary/30">
       <Navbar />
@@ -294,8 +323,11 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col justify-start overflow-hidden pt-20 md:pt-24 pb-2 md:pb-3 lg:pb-2 hero-pattern">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/15 rounded-full blur-[140px] -z-10 opacity-60" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10 opacity-40" />
-        <div className="container relative z-0 mx-auto grid w-full min-w-0 grid-cols-1 gap-8 px-4 md:px-6 lg:grid-cols-2 lg:items-stretch lg:gap-10">
-          <div className="z-10 flex min-w-0 max-w-none flex-col gap-8 text-left md:gap-10">
+        <div className="container relative z-0 mx-auto grid w-full min-w-0 grid-cols-1 gap-8 px-4 md:px-6 lg:grid-cols-2 lg:items-start lg:gap-10">
+          <div
+            ref={heroCopyRef}
+            className="z-10 flex min-h-0 min-w-0 max-w-none flex-col gap-8 text-left md:gap-10"
+          >
             <h1 className="text-5xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-heading font-bold leading-[1.1] tracking-tight">
               <span className="text-black">Product</span>{" "}
               <span className="text-gradient">Foundry</span>
@@ -324,17 +356,22 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex w-full min-h-0 min-w-0 flex-col lg:h-full lg:min-h-0">
-            {/* Mobile: block img at full content width (no landscape aspect box → no side letterboxing). lg+: fill column height with object-contain. */}
-            <div className="relative mx-auto w-full min-w-0 overflow-hidden rounded-2xl bg-transparent lg:mx-0 lg:ml-auto lg:flex-1 lg:min-h-0 lg:max-h-full lg:max-w-full">
-              <img
-                src={torinosoftHeroImg}
-                alt="Torinosoft — smart city and digital innovation"
-                className="pointer-events-none block h-auto w-full max-w-none lg:absolute lg:inset-0 lg:box-border lg:h-full lg:w-full lg:max-h-full lg:object-contain lg:object-center"
-                decoding="async"
-                fetchPriority="high"
-              />
-            </div>
+          <div
+            className="flex w-full min-h-0 min-w-0 flex-col items-center justify-start overflow-hidden lg:items-end"
+            style={lgHeroPairPx != null ? { maxHeight: lgHeroPairPx } : undefined}
+          >
+            {/*
+              lg: Right column max-height = measured left column height so the hero row height follows copy (image cannot inflate the row / push below the fold).
+              Full image via object-contain; w-auto keeps width only as wide as the scaled bitmap. Rounded corners on the raster.
+            */}
+            <img
+              src={torinosoftHeroImg}
+              alt="Torinosoft — smart city and digital innovation"
+              className="pointer-events-none block h-auto w-auto max-w-full max-h-[min(58vh,480px)] rounded-2xl object-contain lg:max-h-none"
+              style={lgHeroPairPx != null ? { maxHeight: lgHeroPairPx } : undefined}
+              decoding="async"
+              fetchPriority="high"
+            />
           </div>
         </div>
       </section>

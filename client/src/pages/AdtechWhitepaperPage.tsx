@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { WhitepaperPdfViewer } from "@/components/WhitepaperPdfViewer";
 import { Link } from "wouter";
-import adtechWhitepaperPdf from "../../../attached_assets/pdfs/17032026_Whitepaper_AdTech.pdf";
+import adtechWhitepaperPdf from "@assets/pdfs/17032026_Whitepaper_AdTech.pdf";
 
 export default function AdtechWhitepaperPage() {
   return (

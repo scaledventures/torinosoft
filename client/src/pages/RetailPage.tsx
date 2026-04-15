@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import retailKeyImg from "@assets/retail-key.jpg";
-import retailBannerImg from "../../../attached_assets/Retail-Banner.jpg";
+import retailBannerImg from "@assets/Retail-Banner.jpg";
 
 const KEY_CHALLENGES = [
   "Increasing responsibility to protect customer privacy and comply with data protection regulations",

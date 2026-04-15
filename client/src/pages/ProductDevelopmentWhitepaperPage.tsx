@@ -1,5 +1,5 @@
 import { ResourceWhitepaperShell } from "@/components/resources/ResourceWhitepaperShell";
-import productDevelopmentWhitepaperPdf from "../../../attached_assets/Whitepapers/White Paper-Product Development.pdf";
+import productDevelopmentWhitepaperPdf from "@assets/Whitepapers/White Paper-Product Development.pdf";
 
 export default function ProductDevelopmentWhitepaperPage() {
   return (

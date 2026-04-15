@@ -1,9 +1,26 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import fs from "fs";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { metaImagesPlugin } from "./vite-plugin-meta-images";
+
+/** Extra dirs Vite may read when `@assets` or imports resolve outside the client root (e.g. symlinked `attached_assets`). */
+function viteFsAllowExtra(): string[] {
+  const root = import.meta.dirname;
+  const attached = path.resolve(root, "attached_assets");
+  const paths = [root, attached];
+  try {
+    const real = fs.realpathSync(attached);
+    if (real !== attached) {
+      paths.push(real);
+    }
+  } catch {
+    // missing or unreadable
+  }
+  return Array.from(new Set(paths));
+}
 
 export default defineConfig({
   plugins: [
@@ -46,6 +63,7 @@ export default defineConfig({
     fs: {
       strict: true,
       deny: ["**/.*"],
+      allow: viteFsAllowExtra(),
     },
   },
 });

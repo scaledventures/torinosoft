@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import loyaltyOffersHeroImg from "../../../attached_assets/LoyaltyAndOffers.jpg";
+import loyaltyOffersHeroImg from "@assets/LoyaltyAndOffers.jpg";
 
 export default function LoyaltyOffersPage() {
   return (

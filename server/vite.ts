@@ -25,7 +25,8 @@ export async function setupVite(server: Server, app: Express) {
         process.exit(1);
       },
     },
-    server: serverOptions,
+    // Merge so middleware options do not drop host, fs.allow, etc. from vite.config.ts
+    server: { ...(viteConfig.server ?? {}), ...serverOptions },
     appType: "custom",
   });
 

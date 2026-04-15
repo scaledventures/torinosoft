@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import safetyKeyImg from "@assets/safety-enforcement-key.png";
-import safetyEnforcementBannerImg from "../../../attached_assets/SafetyEnforcement-Banner.png";
+import safetyEnforcementBannerImg from "@assets/SafetyEnforcement-Banner.png";
 
 const SAFETY_KEY_CHALLENGES = [
   "Officers cannot be present everywhere",
